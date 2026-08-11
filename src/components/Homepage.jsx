@@ -90,7 +90,7 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
     {
       icon: <ShieldCheck size={28} className="text-gradient" />,
       title: '당일 활어 즉시 손질',
-      desc: '미리 썰어두지 않고 주문과 동시에 수조에서 꺼내어 활어의 쫄깃한 식감과 단맛을 극대화합니다.'
+      desc: '고급활어를 최적의 숙성과정을 거쳐, 손질후, 주문시간에 맞추어 순살중량제로 제공됩니다.'
     },
     {
       icon: <Utensils size={28} className="text-gradient" />,
