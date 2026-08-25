@@ -50,7 +50,7 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
       price: '70,000원 ~',
       originalPrice: null,
       tag: '🥇 1등 막회',
-      image: '/menu_makhoe.jpg',
+      image: '/makhoe_real.jpg?v=3',
       stars: 4.9,
       reviews: 388
     },
