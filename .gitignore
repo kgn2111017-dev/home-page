@@ -13,6 +13,10 @@ git-env
 dist
 dist-ssr
 *.local
+.env
+.env.*
+.mcp.json
+.cursor/
 
 # Editor directories and files
 .vscode/*

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Homepage from './components/Homepage';
 import Admin from './components/Admin';
 import AuthModal from './components/AuthModal';
+import SignupPage from './components/SignupPage';
 
 function App() {
   const [currentView, setCurrentView] = useState(() => {
@@ -9,6 +10,9 @@ function App() {
     const hash = window.location.hash;
     if (path === '/admin' || hash === '#/admin' || hash === '#admin') {
       return 'admin';
+    }
+    if (path === '/signup' || hash === '#/signup' || hash === '#signup') {
+      return 'signup';
     }
     return 'home';
   });
@@ -26,6 +30,8 @@ function App() {
       const hash = window.location.hash;
       if (path === '/admin' || hash === '#/admin' || hash === '#admin') {
         setCurrentView('admin');
+      } else if (path === '/signup' || hash === '#/signup' || hash === '#signup') {
+        setCurrentView('signup');
       } else {
         setCurrentView('home');
       }
@@ -43,6 +49,9 @@ function App() {
     if (view === 'admin') {
       window.history.pushState({}, '', '/admin');
       setCurrentView('admin');
+    } else if (view === 'signup') {
+      window.history.pushState({}, '', '/signup');
+      setCurrentView('signup');
     } else {
       window.history.pushState({}, '', '/');
       setCurrentView('home');
@@ -65,6 +74,14 @@ function App() {
     <>
       {currentView === 'admin' ? (
         <Admin onNavigate={navigateTo} />
+      ) : currentView === 'signup' ? (
+        <SignupPage 
+          onNavigate={navigateTo}
+          onOpenLogin={() => {
+            navigateTo('home');
+            setIsAuthModalOpen(true);
+          }}
+        />
       ) : (
         <Homepage 
           user={user} 
@@ -78,9 +95,14 @@ function App() {
         isOpen={isAuthModalOpen} 
         onClose={() => setIsAuthModalOpen(false)} 
         onLoginSuccess={handleLoginSuccess}
+        onOpenSignup={() => {
+          setIsAuthModalOpen(false);
+          navigateTo('signup');
+        }}
       />
     </>
   );
 }
 
 export default App;
+

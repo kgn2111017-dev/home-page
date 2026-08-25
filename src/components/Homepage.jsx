@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MapPin, Phone, Clock, Star, Menu, LogIn, UserPlus, 
-  LogOut, Compass, Award, Utensils, ShieldCheck, ChevronRight, 
-  ChevronLeft, MessageSquare, UserCheck, Activity
+import {
+  MapPin, Phone, Clock, Star, Menu, LogIn, UserPlus,
+  LogOut, Compass, Award, Utensils, ShieldCheck, ChevronRight,
+  ChevronLeft, UserCheck
 } from 'lucide-react';
-import heroOwners from '../assets/hero_owners.png';
-import heroSashimi1 from '../assets/hero_sashimi1.png';
-import heroSashimi2 from '../assets/hero_sashimi2.png';
 
 export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +21,7 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [activeSlide]);
+  }, [slides.length]);
 
   const handlePrevSlide = (e) => {
     e.stopPropagation();
@@ -38,51 +35,108 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
 
   const categories = [
     { id: 'all', label: '전체 메뉴' },
-    { id: 'signature', label: '시그니처' },
-    { id: 'classic', label: '클래식 활어' },
+    { id: 'signature', label: '1등 막회 & 시그니처' },
     { id: 'seasonal', label: '제철 모둠회' },
-    { id: 'vip', label: 'VIP 오마카세' },
+    { id: 'classic', label: '클래식 활어' },
+    { id: 'vip', label: '오마카세 & 보양특선' },
   ];
 
   const menus = [
     {
       id: 1,
       category: 'signature',
+      name: '1등 부산막회 (대광어 3kg+)',
+      desc: '3kg 이상 명품 대광어로 두툼하게 썰어내는 풍어수산 자부심 1등 막회 (소 500g / 중 700g / 대 900g / 특대 1,100g)',
+      price: '70,000원 ~',
+      originalPrice: null,
+      tag: '🥇 1등 막회',
+      image: '/menu_makhoe.jpg',
+      stars: 4.9,
+      reviews: 388
+    },
+    {
+      id: 2,
+      category: 'vip',
+      name: '풍어 오마카세 회',
+      desc: '당일 마포농수산물시장 최고 선도의 특급 어종만을 셰프가 직접 엄선한 VIP 스페셜 모둠회',
+      price: '90,000원 ~',
+      originalPrice: null,
+      tag: '👑 VIP 추천',
+      image: '/omakase_real.jpg',
+      stars: 5.0,
+      reviews: 142
+    },
+    {
+      id: 3,
+      category: 'signature',
       name: '프리미엄 활모둠회',
-      desc: '광어, 국산 참돔, 연어 등 제철 활어로 다채롭게 구성한 풍어수산의 시그니처 메뉴',
-      price: '65,000원 ~',
-      tag: '대표 시그니처',
+      desc: '대광어, 국산 대참돔, 고급 연어 등 제철 대표 활어로 풍성하게 구성한 시그니처 모둠회',
+      price: '63,000원 ~',
+      originalPrice: '70,000원',
+      tag: '🏷️ 10% 할인',
+      image: '/menu_modumhoe.jpg',
       stars: 4.9,
       reviews: 421
     },
     {
-      id: 2,
-      category: 'classic',
-      name: '프리미엄 광참우회',
-      desc: '명품 대광어, 국산 참돔, 찰진 우럭만을 골라 담은 클래식 활어회의 극치',
-      price: '70,000원 ~',
-      tag: '인기 활어',
-      stars: 4.8,
-      reviews: 219
-    },
-    {
-      id: 3,
+      id: 4,
       category: 'seasonal',
       name: '프리미엄 줄무늬전갱이 모둠회',
-      desc: '사각사각한 식감과 고급스러운 기름진 맛이 일품인 최고급 줄무늬전갱이 조합',
-      price: '75,000원 ~',
-      tag: '제철 추천',
+      desc: '사각사각한 특유의 식감과 고소하고 고급스러운 기름진 풍미가 일품인 최고급 전갱이 조합',
+      price: '72,000원 ~',
+      originalPrice: '80,000원',
+      tag: '🌊 제철 강추',
+      image: '/menu_striped_jack.jpg',
       stars: 5.0,
-      reviews: 184
+      reviews: 215
     },
     {
-      id: 4,
-      name: '풍어 오마카세 회',
-      desc: '당일 수산시장 최고의 선도를 자랑하는 최고급 어종만을 셰프가 직접 엄선한 스페셜 코스',
-      price: '90,000원 ~',
-      tag: 'VIP',
+      id: 5,
+      category: 'seasonal',
+      name: '프리미엄 도다리세꼬시 모둠회',
+      desc: '씹을수록 꼬소한 도다리 세꼬시와 명품 제철 활어를 동시에 다채롭게 즐기는 별미',
+      price: '63,000원 ~',
+      originalPrice: '70,000원',
+      tag: '🐟 별미 세꼬시',
+      image: '/menu_dodari.jpg',
+      stars: 4.8,
+      reviews: 176
+    },
+    {
+      id: 6,
+      category: 'classic',
+      name: '프리미엄 미삼회 (대광어+대참돔+연어)',
+      desc: '명품 대광어, 찰진 국산 대참돔, 부드러운 연어 세 가지 인기 어종의 환상적인 3색 조합',
+      price: '70,000원 ~',
+      originalPrice: null,
+      tag: '✨ 3색 베스트',
+      image: '/menu_misamhoe.jpg',
+      stars: 4.9,
+      reviews: 198
+    },
+    {
+      id: 7,
+      category: 'classic',
+      name: '프리미엄 광참우회 (대광어+참돔+우럭)',
+      desc: '대광어, 참돔, 쫀득한 우럭까지 횟감의 대명사 클래식 3대 활어만을 정성껏 담아낸 명품회',
+      price: '70,000원 ~',
+      originalPrice: null,
+      tag: '👍 클래식 활어',
+      image: '/menu_gwangchamwoo.jpg',
+      stars: 4.8,
+      reviews: 243
+    },
+    {
+      id: 8,
+      category: 'vip',
+      name: '명품 민어 모둠회 / 민어회',
+      desc: '여름 보양식의 끝판왕! 부레, 껍질, 찰진 민어 순살까지 전 부위를 완벽히 맛보는 보양 특선',
+      price: '85,000원 ~',
+      originalPrice: null,
+      tag: '💪 명품 보양',
+      image: '/minae_modumhoe.jpg',
       stars: 5.0,
-      reviews: 98
+      reviews: 112
     }
   ];
 
@@ -131,28 +185,51 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
       <header style={styles.header} className="glass">
         <div style={styles.navContainer} className="container">
           <div style={styles.logo} onClick={() => onNavigate('home')}>
-            <span style={styles.logoText} className="text-gradient">풍어수산</span>
-            <span style={styles.logoSubtext}>부산첫집</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <img
+                src="/logo_pungeo.png"
+                alt="풍어수산 부산첫집 로고"
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '12px',
+                  objectFit: 'cover',
+                  border: '2px solid var(--accent-gold)',
+                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.45)',
+                  backgroundColor: '#0F172A'
+                }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <span style={{ fontSize: '1.45rem', fontWeight: '900', letterSpacing: '-0.5px', lineHeight: '1.15' }} className="text-gradient">
+                  풍어수산
+                </span>
+                <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--accent-gold)', letterSpacing: '0.5px' }}>
+                  (부산첫집)
+                </span>
+              </div>
+            </div>
           </div>
 
           <nav className="desktop-nav" style={styles.desktopNav}>
             <a href="#menu" style={styles.navLink}>메뉴안내</a>
             <a href="#features" style={styles.navLink}>우리의 고집</a>
             <a href="#location" style={styles.navLink}>찾아오시는 길</a>
-            <button 
-              onClick={() => onNavigate('admin')} 
-              style={{...styles.navLink, color: 'var(--accent-gold)', fontWeight: '600'}}
-            >
-              관리자페이지
-            </button>
           </nav>
 
           <div style={styles.authButtons}>
             {user ? (
               <div style={styles.userInfo}>
-                <span style={styles.userBadge}>
-                  <UserCheck size={14} style={{marginRight: 4}} />
-                  {user.name} 님 ({user.grade})
+                <span style={{
+                  ...styles.userBadge,
+                  ...(user.grade === 'ADMIN' || user.email === 'kgn6123@naver.com' ? {
+                    backgroundColor: 'var(--accent-gold-light)',
+                    color: 'var(--accent-gold-hover)',
+                    border: '1px solid var(--accent-gold)',
+                    fontWeight: '700'
+                  } : {})
+                }}>
+                  <UserCheck size={14} style={{ marginRight: 4 }} />
+                  {user.name} 님 ({user.grade === 'ADMIN' || user.email === 'kgn6123@naver.com' ? '👑 최고관리자' : user.grade})
                 </span>
                 <button onClick={onLogout} style={styles.iconBtn} title="로그아웃">
                   <LogOut size={18} />
@@ -164,11 +241,23 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
                   <LogIn size={16} />
                   <span>로그인</span>
                 </button>
+                <button
+                  onClick={() => onNavigate('signup')}
+                  style={{
+                    ...styles.loginBtn,
+                    backgroundColor: 'var(--accent-color)',
+                    color: '#FFFFFF',
+                    borderColor: 'var(--accent-color)'
+                  }}
+                >
+                  <UserPlus size={16} />
+                  <span>회원가입</span>
+                </button>
               </>
             )}
-            <button 
+            <button
               className="mobile-toggle"
-              style={styles.mobileMenuToggle} 
+              style={styles.mobileMenuToggle}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <Menu size={24} />
@@ -182,12 +271,6 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
             <a href="#menu" onClick={() => setMobileMenuOpen(false)} style={styles.mobileLink}>메뉴안내</a>
             <a href="#features" onClick={() => setMobileMenuOpen(false)} style={styles.mobileLink}>우리의 고집</a>
             <a href="#location" onClick={() => setMobileMenuOpen(false)} style={styles.mobileLink}>찾아오시는 길</a>
-            <button 
-              onClick={() => { setMobileMenuOpen(false); onNavigate('admin'); }} 
-              style={{...styles.mobileLink, color: 'var(--accent-gold)', width: '100%', textAlign: 'left'}}
-            >
-              관리자페이지
-            </button>
           </div>
         )}
       </header>
@@ -197,7 +280,7 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
         <div className="container hero-grid" style={styles.heroContainer}>
           <div style={styles.heroTextBox}>
             <div style={styles.heroBadge}>
-              <Award size={14} style={{color: 'var(--accent-gold)'}} />
+              <Award size={14} style={{ color: 'var(--accent-gold)' }} />
               <span>마포농수산물시장 1층 3301호 | 30년 전통</span>
             </div>
             <h1 style={styles.heroTitle} className="font-serif">
@@ -207,64 +290,64 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
             <p style={styles.heroSubtitle}>
               동해와 남해 최고의 산지에서 당일 직송된 활어만을 사용하여 비교할 수 없는 두툼함과 최상의 단맛을 선사합니다. 인어교주해적단 공식 프리미엄 인증 제휴 매장.
             </p>
-            
+
             <div style={styles.ctaGroup}>
-              <a 
-                href="https://tpirates.com/store/0000000157" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://tpirates.com/store/0000000157"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary"
               >
                 인어교주 배달/주문 <ChevronRight size={16} />
               </a>
-              <a 
-                href="https://naver.me/GEd4WLhg" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://naver.me/GEd4WLhg"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-gold"
               >
                 네이버 예약하기 <ChevronRight size={16} />
               </a>
-              <a href="tel:02-373-7887" className="btn btn-secondary" style={{backgroundColor: '#FFFFFF'}}>
+              <a href="tel:02-373-7887" className="btn btn-secondary" style={{ backgroundColor: '#FFFFFF' }}>
                 <Phone size={16} /> 전화 주문
               </a>
             </div>
           </div>
-          
+
           <div style={styles.heroImageWrapper}>
             <div style={styles.sliderContainer}>
               {slides.map((slide, idx) => (
-                <div 
-                  key={slide.id} 
+                <div
+                  key={slide.id}
                   style={{
-                    ...styles.slide, 
+                    ...styles.slide,
                     opacity: idx === activeSlide ? 1 : 0,
                     zIndex: idx === activeSlide ? 2 : 1,
                     visibility: idx === activeSlide ? 'visible' : 'hidden',
                   }}
                 >
-                  <img 
-                    src={slide.img} 
-                    alt={slide.alt} 
+                  <img
+                    src={slide.img}
+                    alt={slide.alt}
                     className={idx === activeSlide ? 'kenburns-active' : ''}
                     style={{
                       ...styles.heroImgNew,
                       objectPosition: slide.objectPosition
-                    }} 
+                    }}
                   />
                 </div>
               ))}
-              
-              <button 
-                onClick={handlePrevSlide} 
+
+              <button
+                onClick={handlePrevSlide}
                 style={styles.sliderArrowLeft}
                 aria-label="이전 사진"
                 className="slider-arrow-btn"
               >
                 <ChevronLeft size={20} />
               </button>
-              <button 
-                onClick={handleNextSlide} 
+              <button
+                onClick={handleNextSlide}
                 style={styles.sliderArrowRight}
                 aria-label="다음 사진"
                 className="slider-arrow-btn"
@@ -339,6 +422,28 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
           <div style={styles.menuGrid}>
             {(selectedCategory === 'all' ? menus : menus.filter(m => m.category === selectedCategory)).map((m) => (
               <div key={m.id} className="card hover-bounce" style={styles.menuCard}>
+                {m.image && (
+                  <div style={{
+                    margin: '-28px -28px 20px -28px',
+                    height: '210px',
+                    overflow: 'hidden',
+                    borderTopLeftRadius: '16px',
+                    borderTopRightRadius: '16px',
+                    position: 'relative',
+                    backgroundColor: '#F1F5F9'
+                  }}>
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+                )}
                 <div style={styles.menuCardTop}>
                   <span style={styles.menuTag}>{m.tag}</span>
                   <div style={styles.menuRating}>
@@ -347,20 +452,27 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
                     <span style={styles.reviewCount}>({m.reviews})</span>
                   </div>
                 </div>
-                
+
                 <h3 style={styles.menuName} className="font-serif">{m.name}</h3>
                 <p style={styles.menuDesc}>{m.desc}</p>
-                
+
                 <div style={styles.menuFooter}>
                   <div style={styles.priceContainer}>
                     <span style={styles.priceLabel}>권장시세</span>
-                    <span style={styles.priceVal} className="font-number">{m.price}</span>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                      {m.originalPrice && (
+                        <span style={{ fontSize: '0.85rem', color: 'var(--text-tertiary, #94A3B8)', textDecoration: 'line-through' }}>
+                          {m.originalPrice}
+                        </span>
+                      )}
+                      <span style={styles.priceVal} className="font-number">{m.price}</span>
+                    </div>
                   </div>
-                  <a 
-                    href="https://tpirates.com/store/0000000157" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn btn-outline" 
+                  <a
+                    href="https://tpirates.com/store/0000000157"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
                     style={styles.menuOrderBtn}
                   >
                     주문하기
@@ -403,10 +515,10 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
         <div className="container location-grid" style={styles.locationContainer}>
           <div style={styles.locationInfoPanel}>
             <span style={styles.sectionBadge}>CONTACT & LOCATION</span>
-            <h2 style={{...styles.sectionTitle, textAlign: 'left', marginBottom: '24px'}}>풍어수산 오시는 길</h2>
-            
+            <h2 style={{ ...styles.sectionTitle, textAlign: 'left', marginBottom: '24px' }}>풍어수산(부산첫집) 오시는 길</h2>
+
             <div style={styles.infoRow}>
-              <MapPin size={20} style={{color: 'var(--accent-color)', flexShrink: 0}} />
+              <MapPin size={20} style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
               <div>
                 <h4 style={styles.infoLabel}>매장 주소</h4>
                 <p style={styles.infoValue}>서울특별시 마포구 월드컵로 235 마포농수산물시장 1층 3301호</p>
@@ -415,32 +527,32 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
             </div>
 
             <div style={styles.infoRow}>
-              <Clock size={20} style={{color: 'var(--accent-color)', flexShrink: 0}} />
+              <Clock size={20} style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
               <div>
                 <h4 style={styles.infoLabel}>영업 시간</h4>
-                <p style={styles.infoValue}>매일 09:00 - 21:00 (연중무휴)</p>
-                <p style={styles.infoSubValue}>(1층 수산코너 주문은 20:30까지 가능합니다)</p>
+                <p style={styles.infoValue}>매일 08:00 - 20:00 (연중무휴)</p>
+                <p style={styles.infoSubValue}>(1층 수산코너 주문은 19:30까지 가능합니다)</p>
               </div>
             </div>
 
             <div style={styles.infoRow}>
-              <Phone size={20} style={{color: 'var(--accent-color)', flexShrink: 0}} />
+              <Phone size={20} style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
               <div>
                 <h4 style={styles.infoLabel}>예약 및 퀵 문의</h4>
-                <p style={styles.infoValue} style={{fontSize: '1.25rem', fontWeight: '700', color: 'var(--accent-color)'}} className="font-number">
+                <p style={{ ...styles.infoValue, fontSize: '1.25rem', fontWeight: '700', color: 'var(--accent-color)' }} className="font-number">
                   02-373-7887
                 </p>
               </div>
             </div>
 
-            <div style={{marginTop: '20px', display: 'flex', gap: '12px'}}>
+            <div style={{ marginTop: '20px', display: 'flex', gap: '12px' }}>
               <a href="tel:02-373-7887" className="btn btn-primary">
                 전화 바로 걸기
               </a>
-              <a 
-                href="https://naver.me/GEd4WLhg" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://naver.me/GEd4WLhg"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
                 네이버 지도에서 보기
@@ -457,7 +569,7 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
               </div>
               <span style={styles.mapMarketBadge}>마포농수산물시장 1층</span>
             </div>
-            
+
             <div style={styles.mapGraphic}>
               {/* Abstract minimalist map drawing representing Noryangjin/Mapo market structures */}
               <div style={styles.mapRoad1}>월드컵로 (World Cup-ro)</div>
@@ -480,11 +592,29 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
       <footer style={styles.footer}>
         <div className="container" style={styles.footerContainer}>
           <div style={styles.footerBrand}>
-            <h3 style={styles.footerLogo} className="text-gradient">풍어수산 (부산첫집)</h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '10px' }}>
+              <img
+                src="/logo_pungeo.png"
+                alt="풍어수산 부산첫집 로고"
+                style={{
+                  width: '52px',
+                  height: '52px',
+                  borderRadius: '12px',
+                  objectFit: 'cover',
+                  border: '2px solid var(--accent-gold)',
+                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.45)',
+                  backgroundColor: '#0F172A'
+                }}
+              />
+              <div>
+                <h3 style={{ ...styles.footerLogo, margin: 0, fontSize: '1.4rem', fontWeight: '900' }} className="text-gradient">풍어수산</h3>
+                <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--accent-gold)' }}>(부산첫집)</span>
+              </div>
+            </div>
             <p style={styles.footerTagline}>최고의 선도, 프리미엄 활어회 전문 브랜드</p>
           </div>
           <div style={styles.footerMeta}>
-            <p>대표자: 이연순 | 사업자등록번호: 105-18-54215</p>
+            <p>대표자: 곽경남 | 사업자등록번호: 105-90-37365</p>
             <p>매장전화: 02-373-7887 | 주소: 서울특별시 마포구 월드컵로 235 마포농수산물시장 1층 3301호</p>
             <p style={styles.copyright}>© 2026 PungeoSusan. All rights reserved. Powered by Antigravity IDE.</p>
           </div>
@@ -608,7 +738,7 @@ const styles = {
     padding: '6px 0',
     color: 'var(--text-secondary)',
   },
-  
+
   /* Hero Banner Styles */
   heroSection: {
     backgroundColor: 'var(--bg-primary)',
@@ -1009,7 +1139,7 @@ const styles = {
     color: 'var(--text-muted)',
     marginTop: '2px',
   },
-  
+
   /* Map mock graphic (minimal SVG architecture style) */
   mapMockPanel: {
     backgroundColor: 'var(--bg-card)',
