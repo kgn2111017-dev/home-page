@@ -185,26 +185,26 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
       <header style={styles.header} className="glass">
         <div style={styles.navContainer} className="container">
           <div style={styles.logo} onClick={() => onNavigate('home')}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <img
                 src="/logo_pungeo_v5.png"
                 alt="풍어수산 Poong Eo Seafood 로고"
                 style={{
-                  height: '62px',
+                  height: '92px',
                   width: 'auto',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   objectFit: 'contain',
-                  backgroundColor: '#FFFFFF',
-                  padding: '3px 8px',
-                  border: '1.5px solid var(--accent-gold)',
-                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.35)'
+                  backgroundColor: 'transparent',
+                  padding: 0,
+                  border: 'none',
+                  boxShadow: 'none'
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <span style={{ fontSize: '1.65rem', fontWeight: '900', letterSpacing: '-0.5px', lineHeight: '1.15' }} className="text-gradient">
+                <span style={{ fontSize: '1.75rem', fontWeight: '900', letterSpacing: '-0.5px', lineHeight: '1.15' }} className="text-gradient">
                   풍어수산
                 </span>
-                <span style={{ fontSize: '0.92rem', fontWeight: '800', color: 'var(--accent-gold)', letterSpacing: '0.5px' }}>
+                <span style={{ fontSize: '0.98rem', fontWeight: '800', color: 'var(--accent-gold)', letterSpacing: '0.5px' }}>
                   (부산첫집)
                 </span>
               </div>
@@ -598,14 +598,14 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
                 src="/logo_pungeo_v5.png"
                 alt="풍어수산 Poong Eo Seafood 로고"
                 style={{
-                  height: '64px',
+                  height: '92px',
                   width: 'auto',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   objectFit: 'contain',
-                  backgroundColor: '#FFFFFF',
-                  padding: '4px 10px',
-                  border: '1.5px solid var(--accent-gold)',
-                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.35)'
+                  backgroundColor: 'transparent',
+                  padding: 0,
+                  border: 'none',
+                  boxShadow: 'none'
                 }}
               />
               <div>
@@ -641,7 +641,8 @@ const styles = {
     transition: 'var(--transition-normal)',
   },
   navContainer: {
-    height: '82px',
+    minHeight: '106px',
+    padding: '8px 0',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',

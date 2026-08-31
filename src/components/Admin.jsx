@@ -182,15 +182,15 @@ export default function Admin({ onNavigate }) {
                 src="/logo_pungeo_v5.png" 
                 alt="풍어수산 로고" 
                 style={{
-                  height: '46px', 
+                  height: '68px', 
                   width: 'auto', 
                   maxWidth: '180px',
                   borderRadius: '10px', 
                   objectFit: 'contain', 
-                  border: '1.5px solid var(--accent-gold)',
-                  boxShadow: '0 0 14px rgba(255, 255, 255, 0.4)',
-                  backgroundColor: '#FFFFFF',
-                  padding: '3px 8px'
+                  border: 'none',
+                  boxShadow: 'none',
+                  backgroundColor: 'transparent',
+                  padding: 0
                 }} 
               />
               <span style={styles.logoText} className="text-gradient">풍어수산(부산첫집)</span>
