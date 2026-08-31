@@ -6,4 +6,4 @@ User-agent: Yeti
 Allow: /
 Disallow: /admin
 
-Sitemap: https://pungeosusan.com/sitemap.xml
+Sitemap: https://pungeosusan.vercel.app/sitemap.xml
