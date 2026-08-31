@@ -286,7 +286,7 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
               <span>마포농수산물시장 1층 3301호 | 30년 전통</span>
             </div>
             <h1 style={styles.heroTitle} className="font-serif">
-              선도와 타협하지 않는<br />
+              <span style={{ color: '#1D4ED8' }}>선도와 타협하지 않는</span><br />
               <span className="text-gradient">풍어수산 (부산첫집)</span>
             </h1>
             <p style={styles.heroSubtitle}>

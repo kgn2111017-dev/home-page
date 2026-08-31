@@ -2,12 +2,17 @@
 
 ## 2026-08-31
 
-### [네이버 검색엔진 SEO 기본 설정]
-- **네이버 서치어드바이저(Yeti 봇) 기본 파일 생성**:
+### [디자인 및 텍스트 스타일 개선]
+- **히어로 배너 헤드라인 색상 변경**:
+  - `선도와 타협하지 않는` 문구 글자색을 신선하고 고급스러운 오션 블루(`#1D4ED8`)로 변경.
+  - 관련 파일: [`Homepage.jsx`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/src/components/Homepage.jsx)
+
+### [네이버 및 구글 검색엔진 SEO 설정]
+- **네이버 및 구글 서치어드바이저 / 서치콘솔 기본 파일 생성 및 소유권 인증 완료**:
   - [`robots.txt`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/public/robots.txt): 검색엔진 수집 허용(`Allow: /`), 관리자 페이지 제외(`Disallow: /admin`), sitemap.xml 경로 명시.
   - [`sitemap.xml`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/public/sitemap.xml): 대표 도메인 표준 XML 사이트맵 생성.
-- **대표 URL(Canonical Tag) 지정**:
-  - [`index.html`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/index.html): `<link rel="canonical" href="https://pungeosusan.com/" />` 추가.
+- **대표 URL 및 인증 태그 추가**:
+  - [`index.html`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/index.html): `<link rel="canonical" ...>`, `<meta name="naver-site-verification" ...>`, `<meta name="google-site-verification" ...>` 추가.
 
 ## 2026-08-25
 
