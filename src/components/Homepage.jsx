@@ -187,16 +187,18 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
           <div style={styles.logo} onClick={() => onNavigate('home')}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <img
-                src="/logo_pungeo.png"
-                alt="풍어수산 부산첫집 로고"
+                src="/logo_pungeo_v4.png"
+                alt="풍어수산 Pungeo Susan 로고"
                 style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '12px',
-                  objectFit: 'cover',
-                  border: '2px solid var(--accent-gold)',
-                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.45)',
-                  backgroundColor: '#0F172A'
+                  height: '46px',
+                  width: 'auto',
+                  maxWidth: '220px',
+                  borderRadius: '10px',
+                  objectFit: 'contain',
+                  backgroundColor: '#FFFFFF',
+                  padding: '3px 8px',
+                  border: '1.5px solid var(--accent-gold)',
+                  boxShadow: '0 0 14px rgba(255, 255, 255, 0.4)'
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -594,16 +596,18 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
           <div style={styles.footerBrand}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '10px' }}>
               <img
-                src="/logo_pungeo.png"
-                alt="풍어수산 부산첫집 로고"
+                src="/logo_pungeo_v4.png"
+                alt="풍어수산 Pungeo Susan 로고"
                 style={{
-                  width: '52px',
-                  height: '52px',
-                  borderRadius: '12px',
-                  objectFit: 'cover',
-                  border: '2px solid var(--accent-gold)',
-                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.45)',
-                  backgroundColor: '#0F172A'
+                  height: '48px',
+                  width: 'auto',
+                  maxWidth: '220px',
+                  borderRadius: '10px',
+                  objectFit: 'contain',
+                  backgroundColor: '#FFFFFF',
+                  padding: '4px 10px',
+                  border: '1.5px solid var(--accent-gold)',
+                  boxShadow: '0 0 14px rgba(255, 255, 255, 0.4)'
                 }}
               />
               <div>

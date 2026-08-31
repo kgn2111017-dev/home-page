@@ -179,9 +179,19 @@ export default function Admin({ onNavigate }) {
           <div style={styles.logo} onClick={() => onNavigate('home')}>
             <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
               <img 
-                src="/logo_pungeo.png" 
+                src="/logo_pungeo_v4.png" 
                 alt="풍어수산 로고" 
-                style={{width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover', border: '1px solid var(--accent-gold)'}} 
+                style={{
+                  height: '38px', 
+                  width: 'auto', 
+                  maxWidth: '160px',
+                  borderRadius: '8px', 
+                  objectFit: 'contain', 
+                  border: '1.5px solid var(--accent-gold)',
+                  boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
+                  backgroundColor: '#FFFFFF',
+                  padding: '3px 6px'
+                }} 
               />
               <span style={styles.logoText} className="text-gradient">풍어수산(부산첫집)</span>
             </div>
