@@ -3,6 +3,10 @@
 ## 2026-08-31
 
 ### [디자인 및 텍스트 스타일 개선]
+- **브랜드 로고 교체 및 30% 확대**:
+  - 도약하는 활어/파도 그래픽과 영문 표기가 적용된 최신 브랜드 로고([`logo_pungeo_v5.png`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/public/logo_pungeo_v5.png)) 적용.
+  - 가독성 향상을 위해 헤더 로고 크기를 `48px`에서 `62px`로 약 30% 확대 및 네비게이션 높이/텍스트 비율 최적화.
+  - 관련 파일: [`Homepage.jsx`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/src/components/Homepage.jsx), [`Admin.jsx`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/src/components/Admin.jsx), [`index.html`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/index.html)
 - **히어로 배너 헤드라인 색상 변경**:
   - `선도와 타협하지 않는` 문구 글자색을 신선하고 고급스러운 오션 블루(`#1D4ED8`)로 변경.
   - 관련 파일: [`Homepage.jsx`](file:///c:/Users/%EA%B3%BD%EA%B2%BD%EB%82%A8/Desktop/home%20page/home%20page/src/components/Homepage.jsx)
