@@ -185,27 +185,26 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
       <header style={styles.header} className="glass">
         <div style={styles.navContainer} className="container">
           <div style={styles.logo} onClick={() => onNavigate('home')}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
               <img
-                src="/logo_pungeo_v4.png"
-                alt="풍어수산 Pungeo Susan 로고"
+                src="/logo_pungeo_v5.png"
+                alt="풍어수산 Poong Eo Seafood 로고"
                 style={{
-                  height: '46px',
+                  height: '62px',
                   width: 'auto',
-                  maxWidth: '220px',
-                  borderRadius: '10px',
+                  borderRadius: '12px',
                   objectFit: 'contain',
                   backgroundColor: '#FFFFFF',
                   padding: '3px 8px',
                   border: '1.5px solid var(--accent-gold)',
-                  boxShadow: '0 0 14px rgba(255, 255, 255, 0.4)'
+                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.35)'
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <span style={{ fontSize: '1.45rem', fontWeight: '900', letterSpacing: '-0.5px', lineHeight: '1.15' }} className="text-gradient">
+                <span style={{ fontSize: '1.65rem', fontWeight: '900', letterSpacing: '-0.5px', lineHeight: '1.15' }} className="text-gradient">
                   풍어수산
                 </span>
-                <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--accent-gold)', letterSpacing: '0.5px' }}>
+                <span style={{ fontSize: '0.92rem', fontWeight: '800', color: 'var(--accent-gold)', letterSpacing: '0.5px' }}>
                   (부산첫집)
                 </span>
               </div>
@@ -596,18 +595,17 @@ export default function Homepage({ user, onLogout, onOpenAuth, onNavigate }) {
           <div style={styles.footerBrand}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '10px' }}>
               <img
-                src="/logo_pungeo_v4.png"
-                alt="풍어수산 Pungeo Susan 로고"
+                src="/logo_pungeo_v5.png"
+                alt="풍어수산 Poong Eo Seafood 로고"
                 style={{
-                  height: '48px',
+                  height: '64px',
                   width: 'auto',
-                  maxWidth: '220px',
-                  borderRadius: '10px',
+                  borderRadius: '12px',
                   objectFit: 'contain',
                   backgroundColor: '#FFFFFF',
                   padding: '4px 10px',
                   border: '1.5px solid var(--accent-gold)',
-                  boxShadow: '0 0 14px rgba(255, 255, 255, 0.4)'
+                  boxShadow: '0 0 16px rgba(226, 180, 89, 0.35)'
                 }}
               />
               <div>
@@ -643,7 +641,7 @@ const styles = {
     transition: 'var(--transition-normal)',
   },
   navContainer: {
-    height: '72px',
+    height: '82px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
